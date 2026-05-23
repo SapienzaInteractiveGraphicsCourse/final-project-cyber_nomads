@@ -1,12 +1,40 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cyber-Tank Arena: Nomads</title>
+  <title>Cyber-Tank Arena: Neon Protocol</title>
   <link rel="stylesheet" href="css/style.css">
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.157.0/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.157.0/examples/jsm/"
+      }
+    }
+  </script>
 </head>
 <body>
- 
+  <div id="ui-layer">
+    <div id="start-screen">
+      <h1>CYBER-TANK ARENA</h1>
+      <h2>Neon Protocol</h2>
+      <p id="start-prompt">Press any key to deploy</p>
+      <p id="high-score-display"></p>
+    </div>
+    <div id="hud" class="hidden">
+      <div id="health-container"><div id="health-bar"></div></div>
+      <div id="score">SCORE 000000</div>
+      <div id="wave">WAVE 1</div>
+    </div>
+    <div id="game-over" class="hidden">
+      <h1>SYSTEM FAILURE</h1>
+      <h2 id="final-score"></h2>
+      <p>Press any key to redeploy</p>
+    </div>
+    <div id="crosshair">+</div>
+  </div>
+  <canvas id="game-canvas"></canvas>
+  <script type="module" src="js/main.js"></script>
 </body>
 </html>
