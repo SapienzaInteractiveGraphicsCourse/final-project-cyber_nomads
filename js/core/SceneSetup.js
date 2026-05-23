@@ -52,12 +52,7 @@ export class SceneSetup {
     const hemi = new THREE.HemisphereLight(0x4444aa, 0x221133, 0.3);
     this.scene.add(hemi);
 
-    // Arena center magenta pillar
-    const centerGlow = new THREE.PointLight(COLORS.NEON_MAGENTA, 25, 50, 1.3);
-    centerGlow.position.set(0, 6, 0);
-    this.scene.add(centerGlow);
-
-    // Four corner spotlights aimed at arena center — create dramatic rim lighting
+    // Four corner accent lights create dramatic rim lighting
     // when the tank moves between them, and specular highlights on the metal body
     const half = ARENA_SIZE / 2 - 2;
     [
