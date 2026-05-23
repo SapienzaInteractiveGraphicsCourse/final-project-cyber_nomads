@@ -33,9 +33,16 @@ for (let i = 0; i < 1200; i++) {
   );
 }
 starGeo.setAttribute('position', new THREE.Float32BufferAttribute(starVerts, 3));
-scene.add(new THREE.Points(starGeo, new THREE.PointsMaterial({ color: 0xffffff, size: 0.25 })));
 
-const obsMat = new THREE.MeshStandardMaterial({
+export const starField = new THREE.Points(starGeo, new THREE.PointsMaterial({
+  color: 0xffffff,
+  size: 0.25,
+  transparent: true,
+  opacity: 1,
+}));
+scene.add(starField);
+
+export const obsMat = new THREE.MeshStandardMaterial({
   color: 0x8b6530, roughness: 0.7, metalness: 0.2,
   emissive: 0xf97316, emissiveIntensity: 0.08,
 });
@@ -55,7 +62,14 @@ OBS_LAYOUT.forEach(([x, z, rx, rz, h]) => {
   mesh.position.set(x, h / 2, z);
   mesh.castShadow = true;
   mesh.receiveShadow = true;
-  mesh.rotation.y = Math.random() * 0.4 - 0.2;
+  const rotOffset = Math.random() * 0.4 - 0.2;
+  mesh.rotation.y = rotOffset;
   scene.add(mesh);
-  obstacles.push({ mesh, hx: rx / 2 + 0.5, hz: rz / 2 + 0.5 });
+  obstacles.push({
+    mesh, hx: rx / 2 + 0.5, hz: rz / 2 + 0.5,
+    baseY: h / 2,
+    phase: Math.random() * Math.PI * 2,
+    rotSpeed: 0.05 + Math.random() * 0.1,
+    h, rx,
+  });
 });

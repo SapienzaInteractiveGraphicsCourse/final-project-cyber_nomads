@@ -20,6 +20,11 @@ const wheelMat = new THREE.MeshStandardMaterial({
   color: 0x111111, roughness: 0.95, metalness: 0.1,
 });
 
+export function setTankColor(color) {
+  tankMat.color.set(color);
+  tankMat.emissive.set(color);
+}
+
 export const tankGroup = new THREE.Group();
 scene.add(tankGroup);
 

@@ -5,6 +5,8 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+renderer.toneMapping = THREE.CineonToneMapping;
+renderer.toneMappingExposure = 1.2;
 
 export const scene = new THREE.Scene();
 scene.fog = new THREE.FogExp2(0x1a2a4a, 0.018);

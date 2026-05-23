@@ -26,11 +26,13 @@
     <div id="wave-announce"></div>
     <div id="lights-indicator">Headlights: ВКЛ [L]</div>
 
-    <div id="controls-hint">
-      WASD — move<br>
-      MOUSE — Sight<br>
-      ЛКМ — Shot<br>
-      L — headlights
+    <div id="controls-hint" aria-label="Game controls">
+      <span>WASD / Arrows — move</span>
+      <span>Mouse — aim</span>
+      <span>LMB — fire</span>
+      <span>L — headlights</span>
+      <span>X — wireframe</span>
+      <span>Tab — config</span>
     </div>
 
     <div id="game-over">
@@ -38,6 +40,31 @@
       <div class="sub">you have fallen</div>
       <div class="stats" id="final-stats"></div>
       <button id="restart-btn">⟳ To be reborn </button>
+    </div>
+
+    <div id="low-hp-overlay"></div>
+
+    <div id="config-panel" style="display:none;">
+      <h3>CONFIG</h3>
+      <label>Tank<br><input type="color" id="cfg-tank" value="#f97316"></label>
+      <label>Bullet<br><input type="color" id="cfg-bullet" value="#ff8800"></label>
+      <label>Ambient<br><input type="color" id="cfg-ambient" value="#8899cc"></label>
+      <label>Accent<br><input type="color" id="cfg-accent" value="#f97316"></label>
+      <label>View
+        <select id="cfg-camera">
+          <option value="0" selected>Default</option>
+          <option value="1">Chase</option>
+          <option value="2">Orbit</option>
+        </select>
+      </label>
+      <label>Difficulty
+        <select id="cfg-difficulty">
+          <option value="0.7">Easy</option>
+          <option value="1" selected>Normal</option>
+          <option value="1.5">Hard</option>
+        </select>
+      </label>
+      <div class="cfg-hint">TAB — toggle</div>
     </div>
   </div>
 

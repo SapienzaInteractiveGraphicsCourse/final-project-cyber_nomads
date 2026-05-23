@@ -40,5 +40,8 @@ export function initMouseTracking(camera) {
 }
 
 export function onShoot(callback) {
-  window.addEventListener('click', () => callback());
+  window.addEventListener('pointerdown', e => {
+    if (e.button !== 0 || e.target?.id !== 'canvas') return;
+    callback();
+  });
 }
