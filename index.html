@@ -7,6 +7,44 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
- 
+  <canvas id="canvas"></canvas>
+
+  <div id="ui">
+    <div id="hud-top">
+      <div class="hud-block">Score: <span id="score-val">0</span></div>
+      <div class="hud-block">Wave: <span id="wave-val">1</span></div>
+      <div class="hud-block">Enemy: <span id="enemies-val">0</span></div>
+      <div class="hud-block">XP: <span id="xp-val">0</span></div>
+    </div>
+
+    <div id="hp-bar-wrap">
+      <div id="hp-label">HP armor</div>
+      <div id="hp-bar-bg"><div id="hp-bar"></div></div>
+    </div>
+
+    <div id="crosshair"></div>
+    <div id="wave-announce"></div>
+    <div id="lights-indicator">Headlights: ВКЛ [L]</div>
+
+    <div id="controls-hint">
+      WASD — move<br>
+      MOUSE — Sight<br>
+      ЛКМ — Shot<br>
+      L — headlights
+    </div>
+
+    <div id="game-over">
+      <h1>NOMAD FALLEN</h1>
+      <div class="sub">you have fallen</div>
+      <div class="stats" id="final-stats"></div>
+      <button id="restart-btn">⟳ To be reborn </button>
+    </div>
+  </div>
+
+  <!-- CDN  -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/18.6.4/tween.umd.js"></script>
+
+  <script type="module" src="js/main.js"></script>
 </body>
 </html>
