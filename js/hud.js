@@ -33,3 +33,16 @@ export function showGameOver(wave, score, xp) {
 export function hideGameOver() {
   gameOver.style.display = 'none';
 }
+
+let hudAccentColor = '#f97316';
+
+export function setHudAccentColor(color) {
+  hudAccentColor = color;
+  document.querySelectorAll('.hud-block').forEach(el => {
+    el.style.borderColor = color;
+    el.style.color = color;
+  });
+  const hpBarBg = document.getElementById('hp-bar-bg');
+  if (hpBarBg) hpBarBg.style.borderColor = color;
+  document.getElementById('crosshair').style.borderColor = color;
+}
