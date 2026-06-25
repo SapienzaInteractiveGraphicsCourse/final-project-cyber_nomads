@@ -186,6 +186,13 @@ Possible future extensions:
 
 ---
 
+## 🔗 Links
+
+- [Representation](https://canva.link/yats469s96uvwe2)
+- [Report](https://docs.google.com/document/d/1LRpywCe4mWSHMFvNNtxPr0jFmba_XIf1BYEmFPfIu0o/edit?usp=sharing)
+
+---
+
 ## 🎓 Academic Context
 
 This project was developed for the **Interactive Graphics** course.
